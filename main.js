@@ -12,17 +12,17 @@
   let timeToadd = 0;
 
   function updateTimetText() {
-   let h = Math.floor(elapsedTime / 1.296e9);
-   let m = Math.floor(elapsedTime / 60000);
-   let s = Math.floor(elapsedTime % 60000 / 1000);
-   let ms = elapsedTime % 1000;
+   let hour = Math.floor(elapsedTime / 1.296e9);
+   let minute = Math.floor(elapsedTime / 60000);
+   let second = Math.floor(elapsedTime % 60000 / 1000);
+   let mscond = elapsedTime % 1000;
 
-   h = ('0' + h).slice(-2);
-   m = ('0' + m).slice(-2);
-   s = ('0' + s).slice(-2);
-   ms = ('0' + ms).slice(-2);
+   hour = ('0' + hour).slice(-2);
+   minute = ('0' + minute).slice(-2);
+   second = ('0' + second).slice(-2);
+   mscond = ('0' + mscond).slice(-2);
 
-   timer.textContent = h + ':' + m + ':' + s + ':' + ms;
+   timer.textContent = hour + ':' + minute + ':' + second + ':' + mscond;
   }
 
   function countUp() {
@@ -62,5 +62,22 @@
    updateTimetText();
 
   });
+
+
  })();
+
+ function func1() {
+  $('#start').prop('disabled', true);
+  $('#stop').prop('disabled', false);
+ }
+
+ function func2() {
+  $('#start').prop('disabled', false);
+  $('#stop').prop('disabled', true);
+ }
+
+ function func3() {
+  $('#start').prop('disabled', false);
+  $('#stop').prop('disabled', false);
+ }
  
